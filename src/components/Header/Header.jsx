@@ -17,7 +17,7 @@ const Header = () => {
         </div>
         <ul className={styles.header__list}>
           <li><a href="#">Цены и срокиuuu</a></li>
-          <li><a href="#">Услуги</a></li>
+          <li><a href="#">Услугиrrr</a></li>
           <li><a href="#">О компании</a></li>
           <li><a href="#">Контакты</a></li>
           <li><a href="#">Оформить груз</a></li>
