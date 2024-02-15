@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Cargo/static/css/main.f94137e1.css",
-    "main.js": "/Cargo/static/js/main.32dd935d.js",
+    "main.js": "/Cargo/static/js/main.826a5106.js",
     "index.html": "/Cargo/index.html",
     "main.f94137e1.css.map": "/Cargo/static/css/main.f94137e1.css.map",
-    "main.32dd935d.js.map": "/Cargo/static/js/main.32dd935d.js.map"
+    "main.826a5106.js.map": "/Cargo/static/js/main.826a5106.js.map"
   },
   "entrypoints": [
     "static/css/main.f94137e1.css",
-    "static/js/main.32dd935d.js"
+    "static/js/main.826a5106.js"
   ]
 }
