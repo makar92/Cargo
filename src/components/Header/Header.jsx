@@ -16,7 +16,7 @@ const Header = () => {
           <img src="./image/logo.svg" alt="logo" />
         </div>
         <ul className={styles.header__list}>
-          <li><a href="#">Цены и сроки</a></li>
+          <li><a href="#">Цены и срокиuuu</a></li>
           <li><a href="#">Услуги</a></li>
           <li><a href="#">О компании</a></li>
           <li><a href="#">Контакты</a></li>
