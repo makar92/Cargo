@@ -1,0 +1,27 @@
+
+
+
+
+.textArea {
+  &__leftText {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 126%;
+    margin: 0px 0px 6px 0px;
+  }
+  &__input {
+
+    padding: 20px;
+    border-radius: 10px;
+    background: #FFF;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 126%;
+    width: 100%;
+    box-sizing: border-box;
+    &::placeholder {
+      color: #CBCBCB;
+  
+    }
+  }
+}

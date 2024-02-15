@@ -1,0 +1,67 @@
+@import "../../styles";
+
+.formCost {
+  @include container;
+  padding: 90px 0px 0px 0px;
+  position: relative;
+  &__content {
+    padding: 0px 0px 90px 0px;
+    position: relative;
+    max-width: 626px;
+    z-index: 12;
+    @media (max-width: 1140px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: none;
+    }
+  }
+  &__title {
+    margin: 0px 0px 60px 0px;
+    @media (max-width: 1140px) {
+      text-align: center;
+      margin: 0px 0px 20px 0px;
+    }
+  }
+  &__line {
+    display: none;
+    @media (max-width: 1140px) {
+      display: block;
+      margin: 0px auto 60px;
+    }
+    @media (max-width: 768px) {
+      margin: 0px auto 50px;
+    }
+  }
+  &__step {
+    padding: 0px 0px;
+    @media (max-width: 680px) {
+      width: calc(100%);
+    }
+  }
+  &__calculator {
+    
+    position: absolute;
+    bottom: 180px;
+    right: 40px;
+    z-index: 20;
+  }  
+  &__image {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 550px;
+    z-index: 11;
+    @media (max-width: 1140px) {
+      display: none;
+    }
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+}
+

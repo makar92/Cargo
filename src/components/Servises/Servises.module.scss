@@ -1,0 +1,117 @@
+@import "../../styles";
+
+
+.servises {
+  border-radius: 20px;
+  background: #363A4D;
+  padding: 100px 0px 100px;
+  @media (max-width: 767px) {
+    padding: 50px 0px 60px 0px;
+  }
+  &__container {
+    @media (max-width: 767px) {
+      padding: 0px 20px;
+    }
+  }
+  &__title {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+  }
+  &__line {
+    margin: 0px auto 50px auto;
+    @media (max-width: 767px) {
+      margin: 0px auto 30px auto;
+    }
+  }
+  &__arrowWrapper {
+    @include arrowContainer;
+    position: relative;
+  }
+  &__swiper {
+    @include container;
+  }
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__arrow {
+    position: absolute;
+    top: calc(50% - 60px);
+    z-index: 100;
+    @media (max-width: 767px) {
+      display: none;
+    }
+    &_left {
+      left: 0;
+    }
+    &_right {
+      right: 0;
+    }
+  }
+  &__pagination {
+    display: none;
+    @media (max-width: 767px) {
+      display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    margin: 30px 0px 0px 0px;
+    }
+    & .swiperPag  {
+      background: transparent;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+    }
+    & .swiperPagActive {
+      background: #ffffff;
+    }
+  }
+}
+
+
+.serbisesItem {
+
+  width: 360px;
+  height: 482px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  &__bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;right: 0;
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0.00deg, rgba(4, 5, 17, 0.91), rgba(88, 88, 88, 0) 100%);
+  }
+  &__content {
+    position: absolute;
+    bottom: 0;
+    padding: 0px 20px 30px;
+  }
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 124.5%;
+    margin: 0px 0px 20px 0px;
+  }
+  &__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 124.5%;
+    margin: 0px 0px 20px 0px;
+  }
+}

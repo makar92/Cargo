@@ -1,0 +1,41 @@
+.inputBlock {
+  display: grid;
+  grid-template-areas: "a b" "c c" ;
+  justify-content: space-between;
+  row-gap: 6px;
+  
+  &__leftText {
+    grid-area: a;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 126%;
+  }
+
+  &__rightText {
+    cursor: pointer;
+    text-align: right;
+    grid-area: b;
+    color: #E58D35;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 146%;
+    text-decoration-line: underline;
+  }
+
+  &__input {
+    
+    grid-area: c;
+    padding: 20px;
+    border-radius: 10px;
+    background: #FFF;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 126%;
+    box-sizing: border-box;
+    width: 100%;
+    &::placeholder {
+      color: #CBCBCB;
+
+    }
+  }
+}

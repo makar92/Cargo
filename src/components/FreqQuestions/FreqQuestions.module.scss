@@ -1,0 +1,133 @@
+@import "../../styles";
+
+
+.freqQuestions {
+  @include container;
+  padding: 20px 0px 100px 0px;
+  &__title {
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+  }
+  &__line {
+    margin: 0px auto 50px auto;
+    @media (max-width: 767px) {
+      margin: 0px auto 30px auto;
+    }
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+  }
+  &__questions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  &__form {}
+}
+
+.formQuestions {
+  border-radius: 20px;
+  @include box-shadow;
+  background: #363A4D;
+  padding: 40px;
+  max-width: 390px;
+  @media (max-width: 767px) {
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media (max-width: 450px) {
+    padding: 20px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 126%;
+    margin: 0px 0px 10px 0px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
+  &__text {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 126%;
+    margin: 0px 0px 20px 0px;
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+  &__imputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 14px;
+    margin: 0px 0px 30px 0px;
+  }
+  &__button {}
+}
+
+.question {
+  color: #FFFFFF;
+  padding: 20px;
+  border: 1px solid rgb(58, 68, 78);
+  border-radius: 10px;
+  background-color: transparent;
+  transition: 
+    background-color 0.5s ease 0s,
+    color 0.5s ease 0s;
+    @media (max-width: 420px) {
+      padding: 10px;
+    }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 124.5%;
+  }
+  &__arrow {}
+  &__body {
+    opacity: 0%;
+    height: 0px;
+    padding: 0;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 144.5%;
+    transition: all 0.5s ease 0s;
+    overflow: hidden;
+  }
+}
+
+.activeQuestion {
+  background-color: #FFFFFF;
+  color: #282B38;
+  transition: 
+    background-color 0.5s ease 0s,
+    color 0.5s ease 0s;
+  & .question {
+    &__body {
+      padding: 20px 0px 0px 0px;
+      opacity: 100%;
+      height: 74px;
+      transition: all 0.5s ease 0s;
+
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+}

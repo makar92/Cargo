@@ -1,0 +1,27 @@
+.close {
+  width: 33px;
+  height: 33px;
+  padding: 10px;
+  & svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  & path {
+    fill: #7E839A;
+
+  }
+  &:hover {
+    & path {
+      fill: #acb3cf;
+  
+    }
+  }
+  &:active {
+    & path {
+      fill: #5c6da4;
+  
+    }
+  }
+}

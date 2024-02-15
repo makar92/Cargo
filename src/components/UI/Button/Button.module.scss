@@ -1,0 +1,40 @@
+.button {
+  display: inline-block;
+  padding: 14px 27px;
+  border-radius: 90px;
+  border: 1px solid #E58D35;
+  color: #FFF;
+  background-color: #E58D35;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 146%;
+  cursor: pointer;
+  
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: #e56d35;
+    }
+  }
+  &:active {
+    background-color: #5a350f;
+  }
+
+
+ 
+  &.type2 {
+    color: #FFF;
+    background-color: transparent;
+    @media (min-width: 768px) {
+      &:hover {
+        background-color: #b6887357;
+      }
+    }
+    &:active {
+      background-color: #5a350f86;
+    }
+  }
+
+}

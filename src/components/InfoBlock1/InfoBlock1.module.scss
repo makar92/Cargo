@@ -1,0 +1,102 @@
+@import "../../styles";
+
+.infoBlock1 {
+  @include container2;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #363A4D;
+  padding: 90px 0px 0px;
+  @media (max-width: 767px) {
+    padding: 50px 0px 0px;
+  }
+  &__container {
+    @include container;
+    position: relative;
+    padding: 0px 20px;
+  }
+  &__title {
+    margin: 0px 0px 20px 0px;
+    text-align: center;
+  }
+  &__line {
+    margin: 0px auto 0px auto;
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-between;
+    column-gap: 30px;
+    row-gap: 50px;
+    padding: 50px 0px 90px;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  &__slider {
+    display: none;
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  &__slide {
+    padding: 50px 0px 120px 0px;
+  }
+  &__pugination {
+    display: none;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+      position: absolute;
+      bottom: 40px;
+      left: 0;
+      z-index: 100;
+    }
+    & .swiperPag {
+      background: transparent;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+    }
+    & .swiperPagActive {
+      background: #ffffff;
+    }
+  }
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    margin: 0px 0px 20px 0px;
+    width: 113px;
+    height: 113px;
+    border: 1px solid rgb(108, 113, 136);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__bgCircle {
+    width: 93px;
+    height: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    box-shadow: 0px 4px 13px 0px rgba(30, 35, 66, 0.11);
+    background: rgb(137, 194, 73);
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 124.5%;
+    text-align: center;
+  }
+}

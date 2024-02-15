@@ -1,0 +1,37 @@
+.arrow {
+  cursor: pointer;
+  display: inline-block;
+  transition: transform 0.5s ease 0s;
+  &__container {
+    border-radius: 14px;
+    width: 28px;
+    height: 28px;
+  }
+  &__svg {
+    fill: #ffffff;  
+  }
+  @media (min-width: 768px) {
+    &:hover {
+      .arrow__container {
+        background: #232323;
+      }
+    }
+  }
+  &:active {
+    .arrow__container {
+      background: #878787;
+    }
+  }
+}
+
+
+.activeArrow {
+  //transform: rotate(90deg) !important;
+  transition: transform 0.5s ease 0s;
+  & .arrow {
+    &__svg {
+      fill: #E58D35;  
+    }
+
+  }
+}
