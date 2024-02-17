@@ -39,11 +39,11 @@ function App() {
     <div className="App">
       <Header />
       <Carusel />
-      <FormCost />
+      <FormCost id="formCost"/>
       <InfoBlock1 />
       <DeliveryOptions />
-      <Servises />
-      <About />
+      <Servises id="servises"/>
+      <About id="about"/>
       <FreqQuestions />
       <InfoBlock2 />
       <Footer />

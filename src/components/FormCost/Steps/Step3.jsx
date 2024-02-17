@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Steps.module.scss'
 
 const Step3 = (props) => {
+  
   return (
     <div className={styles.stap3 + " " + props.className}>
       <div className={styles.stap3__image}>

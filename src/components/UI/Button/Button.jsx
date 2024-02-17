@@ -4,16 +4,18 @@ import styles from "./Button.module.scss"
 const Button = (props) => {
 
   return (
-    <div 
+    <button 
       className={
         props.transparent
         ? styles.button + " " + props.className + " " + styles.type2
         : styles.button + " " + props.className
       }
       onClick={props.onClick}
+      type={props.type}
+      tabIndex={props.tabIndex}
     >
       {props.text}
-    </div>
+    </button>
   )
 }
 

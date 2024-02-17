@@ -7,6 +7,7 @@ const Checkbox = (props) => {
         type="checkbox"
         name={props.name}
         id={props.name}
+        tabIndex={props.tabIndex}
       />
       <label htmlFor={props.name}>{props.text}</label>
     </div>

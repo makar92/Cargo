@@ -1,16 +1,16 @@
 import React from 'react' 
-import styles from './InfoBlock1.module.scss'
+import styles from './InfoItem.module.scss'
 
-const InfoItem = () => {
+const InfoItem = (props) => {
   return (
     <div className={styles.infoItem}>
       <div className={styles.infoItem__image}>
         <div className={styles.infoItem__bgCircle}>
-          <img src="./image/infoBlock1/file_1.svg" alt="svg" />
+          <img src={props.image} alt="svg" />
         </div>
       </div>
       <div className={styles.infoItem__text}>
-        Таможенное оформление груза
+        {props.text}
       </div>
     </div>
   )

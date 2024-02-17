@@ -1,0 +1,36 @@
+@import "../../../styles";
+
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    margin: 0px 0px 20px 0px;
+    width: 113px;
+    height: 113px;
+    border: 1px solid rgb(108, 113, 136);
+    border-radius: 90px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__bgCircle {
+    width: 93px;
+    height: 93px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 90px;
+    box-shadow: 0px 4px 13px 0px rgba(30, 35, 66, 0.11);
+    background: rgb(137, 194, 73);
+  }
+  &__text {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 124.5%;
+    text-align: center;
+  }
+}

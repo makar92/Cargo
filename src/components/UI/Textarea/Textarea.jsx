@@ -11,7 +11,6 @@ const Textarea = (props) => {
         name="qwestion"
         placeholder={props.placeholder}
         className={styles.textArea__input}
-        
       ></textarea>
     </div>
   )

@@ -3,9 +3,9 @@ import styles from "./About.module.scss"
 import Title from '../UI/Title/Title'
 import Line from '../UI/Line/Line'
 
-const About = () => {
+const About = (props) => {
   return (
-    <div className={styles.about}>
+    <div className={styles.about} id={props.id}>
       <div className={styles.about__content}>
         <Title  
           text="О КОМПАНИИ" 

@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from "./Header.module.scss"
 import Button from '../UI/Button/Button'
 import { Divide as Hamburger } from 'hamburger-react'
 import BurgerWindow from './BurgerWindow'
+import { useDispatch, useSelector } from 'react-redux'
+import { CHANGE_ISOPEN_BURGER_WINDOW } from '../../store/burgerReducer'
+
 
 const Header = () => {
-  
-  const [isOpen, setOpen] = useState(false)
+
+  const navList = [
+    {id:0, name: "Цены и сроки", link: "#formCost"},
+    {id:1, name: "Услуги", link: "#servises"},
+    {id:2, name: "О компании", link: "#about"},
+    {id:3, name: "Контакты", link: "#"},
+    {id:4, name: "Оформить груз", link: "#"},
+  ]
+
+  const dispatch = useDispatch()
+  const burgerWindowIsOpen = useSelector( state => state.burger.burgerWindowIsOpen)
 
   return (
     <header className={styles.header}>
@@ -16,11 +28,7 @@ const Header = () => {
           <img src="./image/logo.svg" alt="logo" />
         </div>
         <ul className={styles.header__list}>
-          <li><a href="#">Цены и срокиuuu</a></li>
-          <li><a href="#">Услугиrrr</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Контакты</a></li>
-          <li><a href="#">Оформить груз</a></li>
+          {navList.map((q) => <li key={q.id}><a href={q.link}>{q.name}</a></li>)}
         </ul>
         <Button 
           text="Оставить заявку" 
@@ -29,16 +37,17 @@ const Header = () => {
         <div className={styles.header__burger}>
           <Hamburger
             size={40}
-            toggled={isOpen}
-            toggle={setOpen}
+            toggled={burgerWindowIsOpen}
+            toggle={() => dispatch({type: CHANGE_ISOPEN_BURGER_WINDOW})}
           />
         </div>
       </nav>
       <BurgerWindow 
-        className={isOpen
+        className={burgerWindowIsOpen
           ? styles.burgerWindow + " " + styles.active
           : styles.burgerWindow
         }
+        navList={navList}
       />
     </header>
   )

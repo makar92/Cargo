@@ -1,13 +1,57 @@
 import React, { useRef } from 'react'
 import styles from "./DeliveryOptions.module.scss"
 import Title from '../UI/Title/Title'
-import DeliveryItem from './DeliveryItem'
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Arrow from '../UI/Arrow/Arrow'
 import { Pagination } from 'swiper/modules';
 import Line from '../UI/Line/Line'
+import DeliveryItem from './DeliveryItem/DeliveryItem'
 
 const DeliveryOptions = () => {
+
+  const items = [
+    {
+      idx: 0,
+      title: "Авто - обычная",
+      image: "./image/deliveryOptions/dev_1.jpg",
+      period: "9-15 дней",
+      weight: "от 5 кг",
+      price: 2.5,
+    },
+    {
+      idx: 1,
+      title: "Авто - ускоренная",
+      image: "./image/deliveryOptions/dev_2.webp",
+      period: "5-10 дней",
+      weight: "от 5 кг",
+      price: 4,
+    },
+    {
+      idx: 2,
+      title: "Авиа",
+      image: "./image/deliveryOptions/dev_3.jpg",
+      period: "2-3 дня",
+      weight: "от 5 кг",
+      price: 10,
+    },
+    {
+      idx: 3,
+      title: "Ж/д",
+      image: "./image/deliveryOptions/dev_4.jpg",
+      period: "10-17 дней",
+      weight: "от 10 кг",
+      price: 3,
+    },
+    {
+      idx: 4,
+      title: "Море",
+      image: "./image/deliveryOptions/dev_5.jpg",
+      period: "15-20 дней",
+      weight: "от 50 кг",
+      price: 5,
+    },
+  ]
 
   const swiperRef = useRef();
 
@@ -17,7 +61,7 @@ const DeliveryOptions = () => {
         text="Варианты доставки грузов из Китая"
         className={styles.deliveryOtions__title}
       />
-      <Line 
+      <Line
         className={styles.deliveryOtions__line}
         color2
       />
@@ -47,13 +91,18 @@ const DeliveryOptions = () => {
             bulletActiveClass: styles.swiperPagActive,
           }}
         >
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
-          <SwiperSlide className={styles.deliveryOtions__slide}><DeliveryItem /></SwiperSlide>
+          {items.map((q) =>
+            <SwiperSlide key={q.idx} className={styles.deliveryOtions__slide}>
+              <DeliveryItem
+                title={q.title}
+                image={q.image}
+                period={q.period}
+                weight={q.weight}
+                price={q.price}
+              />
+            </SwiperSlide>
+          )}
+
         </Swiper>
         <Arrow
           className={
@@ -73,7 +122,7 @@ const DeliveryOptions = () => {
           padding="20px"
           onClick={() => swiperRef.current.slideNext()}
         />
-        <div 
+        <div
           id='deliveryOtions__pugination'
           className={styles.deliveryOtions__pagination}
         ></div>

@@ -4,10 +4,12 @@ import Input from '../../UI/Input/Input'
 import Button from '../../UI/Button/Button'
 import StepIndicator from '../../UI/StepIndicator/StepIndicator'
 import Textarea from '../../UI/Textarea/Textarea'
+import { useDispatch } from 'react-redux'
+import { CHANGE_STEP } from '../../../store/reducer'
 
 const Step2 = (props) => {
 
-
+  const dispatch = useDispatch()
   
   return (
     <div className={styles.step2 + " " + props.className}>
@@ -16,19 +18,22 @@ const Step2 = (props) => {
         <StepIndicator text="2" isActive={true} />
         <StepIndicator text="3" />
       </div>
-      <div className={styles.step2__body}>
+      <form className={styles.step2__body}>
         <Input
           className={styles.step2__inName}
-          placeholder="Введите иммя"
+          type="text"
+          placeholder="Введите имя"
           text="Имя:"
         />
         <Input
           className={styles.step2__inPhone}
+          type="tel"
           placeholder="+7(___)___-__-__"
           text="Номер телефона:"
         />
         <Input
           className={styles.step2__inMail}
+          type="email"
           placeholder="Введите e-mail"
           text="Email:"
         />
@@ -40,17 +45,17 @@ const Step2 = (props) => {
         <div className={styles.step2__button + " " + styles.step2__button_nBack}>
           <Button
             text="Назад"
-            onClick={() => props.changeStep(1)}
+            onClick={() => dispatch({type: CHANGE_STEP, step: 1})}
             transparent
           />
         </div>
         <div className={styles.step2__button + " " + styles.step2__button_inNext}>
           <Button
             text="Следующий шаг"
-            onClick={() => props.changeStep(3)}
+            onClick={() => dispatch({type: CHANGE_STEP, step: 3})}
           />
         </div>
-      </div>
+      </form>
     </div>
   )
 }

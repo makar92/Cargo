@@ -16,6 +16,7 @@ const FileInput = (props) => {
         id='file01'
         type="file"
         className={styles.fileInput__downloads}
+        tabIndex={props.tabIndex}
       />
       <label
         htmlFor="file01"

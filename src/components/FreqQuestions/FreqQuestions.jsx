@@ -1,52 +1,49 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styles from "./FreqQuestions.module.scss"
 import Title from '../UI/Title/Title'
-import Input from '../UI/Input/Input'
-import Button from '../UI/Button/Button'
-import Textarea from '../UI/Textarea/Textarea'
-import Question from './Question'
 import Line from '../UI/Line/Line'
-import FormQuestion from './FormQuestion'
+import { useDispatch, useSelector } from 'react-redux'
+import Question from './Question/Question'
+import FormQuestion from './FormQuestion/FormQuestion'
 
 
 const FreqQuestions = () => {
 
-  const question = [
-    0, 1, 2
-  ] 
 
-  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const dispatch = useDispatch()
+  const activeQuestion = useSelector(state => state.reducer.activeQuestion)
+  const questions = useSelector(state => state.questions.questions)
 
   return (
     <div className={styles.freqQuestions}>
-      <Title 
-        className={styles.freqQuestions__title} 
-        text="Часто задаваемые вопросы" 
+      <Title
+        className={styles.freqQuestions__title}
+        text="Часто задаваемые вопросы"
       />
-      <Line 
-        className={styles.freqQuestions__line}
-        color2
-      />
+      <Line className={styles.freqQuestions__line} color2 />
       <div className={styles.freqQuestions__content}>
-        <div
-          className={styles.freqQuestions__questions}
-        >
-          {question.map((q) =>  (
+        <div className={styles.freqQuestions__questions}>
+          {questions.map((q) => 
             <Question
-            key={q}
-            idx={q}
-            isActive={activeIndex === q}
-            onArow={() => {
-              activeIndex !== q
-              ? setActiveIndex(q)
-              : setActiveIndex(-1)
-            } }
-        />
-          ))}
+              key={q.idx}
+              isActive={activeQuestion === q}
+              onArow={() => activeQuestion !== q
+                ? dispatch({
+                  type: "CHANGE_ACTIVE_QUESTION",
+                  activeQuestion: q,
+                })
+                : dispatch({
+                  type: "CHANGE_ACTIVE_QUESTION",
+                  activeQuestion: -1,
+                })
+              }
+              title={q.title}
+              text={q.text}
+            />
+          )}
         </div>
-        <FormQuestion 
-          className={styles.freqQuestions__form}
-        />
+        <FormQuestion className={styles.freqQuestions__form} />
       </div>
     </div>
   )

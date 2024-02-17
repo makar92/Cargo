@@ -5,8 +5,13 @@ import Input from '../../UI/Input/Input'
 import Button from '../../UI/Button/Button'
 import FileInput from '../../UI/FileInput/FileInput'
 import Checkbox from '../../UI/Checkbox/Checkbox'
+import { useDispatch, useSelector } from 'react-redux'
+import { CHANGE_STEP, OPEN_CALCULATOR } from '../../../store/reducer'
 
-const Step1 = ({volume, ...props}) => {
+const Step1 = ({...props}) => {
+
+  const dispatch = useDispatch()
+  const volume = useSelector( state => state.reducer.volume)
 
   return (
     <div className={styles.step1 + " " + props.className}>
@@ -15,15 +20,17 @@ const Step1 = ({volume, ...props}) => {
         <StepIndicator text="2" />
         <StepIndicator text="3" />
       </div>
-      <div className={styles.step1__body}>
+      <form className={styles.step1__body}>
         <div className={styles.step1__inputs}>
           <Input
             placeholder="Категория товара"
-            text="Категория товара"
+            text="Категория товара:"
+            type="text"
           />
           <Input
+            type="number"
             placeholder="Введите стоимость"
-            text="Стоимость груза"
+            text="Стоимость груза (рубль):"
           />
           <Input
             placeholder="Введите вес"
@@ -35,8 +42,11 @@ const Step1 = ({volume, ...props}) => {
             text="Объем груза (м3):"
             rightText="Рассчитать"
             value={volume}
-            onChange={(e) => props.changeVolume(e.target.value)}
-            onClickRT={() => props.openCalculator()}
+            onChange={(e) => dispatch({
+              type: "CHANGE_VOLUME",
+              value: e.target.value,
+            })}
+            onClickRT={() => dispatch({type: OPEN_CALCULATOR})}
           />
           <div className={styles.step1__checkboxes}>
            <Checkbox 
@@ -51,6 +61,7 @@ const Step1 = ({volume, ...props}) => {
           <Input
             placeholder="Введите код"
             text="Код ТН ВЭД:"
+            type="text"
           />
         </div>
         <FileInput 
@@ -62,8 +73,9 @@ const Step1 = ({volume, ...props}) => {
         <Button 
           className={styles.step1__button}
           text="Следующий шаг" 
-          onClick={() => props.changeStep(2)}/>
-      </div>
+          onClick={() => dispatch({type: CHANGE_STEP, step: 2})}
+        />
+      </form>
     </div>
   )
 }
