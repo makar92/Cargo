@@ -2,6 +2,7 @@
 @import "../../styles";
 
 .infoBlock2 {
+  @include container2;
   padding: 90px 0px 130px 0px;
   background: #363A4D;
   border-radius: 20px;

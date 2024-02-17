@@ -2,6 +2,7 @@
 
 
 .servises {
+  @include container2;
   border-radius: 20px;
   background: #363A4D;
   padding: 100px 0px 100px;
